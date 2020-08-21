@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Giphy.scss';
 import axios from 'axios';
+//variable key word, try with hard code first then add the weather connect 
+const gifchoice = "clouds";
+
 
 class Giphy extends React.Component{
-
     state={
         giphy:null
     }
         componentDidMount(){
-
-        axios.get('https://api.giphy.com/v1/gifs/search?api_key=xgQ2r5ca2ohkkDNIzYD1nOgji38B7g4b&q=clouds&limit=25&offset=0&rating=g&lang=en')
+        axios.get(`http://api.giphy.com/v1/gifs/translate?s=${gifchoice}&api_key=xgQ2r5ca2ohkkDNIzYD1nOgji38B7g4b`)
             .then(res=> {
-                console.log(res.data)
-                let giph = res.data.url;
-
                 this.setState({
-                    weathergiph:giph,
-                    // alttag : descr
+                    weathergif:`https://media.giphy.com/media/${res.data.data.id}/giphy.gif`
+                   
                 })
             })
         }
         
         render(){
-            if(!this.state.weathergiph){
+            if(!this.state.weathergif){
                 return null
             }
             return(
-                <div className="giphy-container">
-                    <img className="giphy" src={this.state.weathergiph} alt="giphy"/>
+                <div className="gif-container">
+                    <img className="gif" src={this.state.weathergif}/>  
                 </div>
             )
         }
