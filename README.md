@@ -1,5 +1,7 @@
-## brīz
+# brīz
 A weather app offering forecasts and corresponding gifs
+
+![Screen grab of the app](/src/assets/images/screen-grab.PNG)
 
 ## Available Scripts
 
