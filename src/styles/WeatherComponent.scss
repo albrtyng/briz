@@ -8,12 +8,11 @@
   &-top{
     display:flex;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: space-between;
     &__left{
       width: 500px;
       box-sizing: border-box;
     }
-
   }
 }
 
@@ -55,6 +54,7 @@
 .chart{
   display:flex;
   flex-direction: column;
+  font-family:$medium;
   &__title{
     font-family:$medium;
     padding:0.25rem;

@@ -112,7 +112,7 @@ const WeatherComponent = (props) => {
 
           <div className="chart">
             <h3 className="chart__title">15 hour forecast</h3>
-            <ChartComponent data={
+            <ChartComponent className='chart__chart' data={
               today ? today.reduce((accumulator, current) => {
                 const time = new Date(current.observation_time.value);
                 const hours = time.getHours();
@@ -127,7 +127,7 @@ const WeatherComponent = (props) => {
             }/>
           </div>
         </div>
-        <Giphy keyword={today ? today[0].weather_code.value:null} />
+        <Giphy keyword={today ? today[0].weather_code.value : null} />
       </div>
       <SevenDayListComponent days={seven ? seven.slice(0, 7) : []}/>
     </div>

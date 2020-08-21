@@ -17,7 +17,8 @@ const ChartComponent = (props) => {
           <stop offset="95%" stopColor="#32a8a8" stopOpacity={0}/>
         </linearGradient>
       </defs>
-      <XAxis dataKey="time" />
+      <XAxis dataKey="time" 
+      padding={{ left: 30, right: 30 }} />
       <Area type="monotone" dataKey="temp" stroke="#3292a8" fillOpacity={1} fill="url(#colorTemp)"
         isAnimationActive={false}
         label={(props) => {
