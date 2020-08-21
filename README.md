@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## brīz
+A weather app offering forecasts and corresponding gifs
 
 ## Available Scripts
 
