@@ -1,0 +1,14 @@
+@import '../styles/fonts';
+@import '../styles/partials.scss';
+
+.giphy-container{
+    width:300px;
+    height:300px;
+}
+
+.giphy{
+    width: 200px;
+    height:200px;
+    border-radius: 3px;
+    overflow: hidden;
+}

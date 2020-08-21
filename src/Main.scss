@@ -1,0 +1,13 @@
+@import './styles/fonts/';
+@import './styles/partials';
+
+main{
+    background:
+    linear-gradient(217deg, #8fc3f5c7, rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(164, 238, 195, 0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(237, 247, 101, 0.904), rgba(0,0,255,0) 70.71%);
+}
+
+.logo{
+    font-family:$medium;
+}
