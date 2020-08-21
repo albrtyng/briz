@@ -1,0 +1,21 @@
+@import './fonts';
+@import './partials.scss';
+
+.seven {
+  height:300px;
+  display: flex;
+  align-items: flex-end;
+
+  &__item {
+    width: calc(100% / 7);
+    font-family:$medium;
+  }
+
+  &__temp{
+    font-family:$medium;
+  }
+
+  &__img {
+    width: 50%;
+  }
+}

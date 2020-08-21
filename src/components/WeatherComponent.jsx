@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ChartComponent from './ChartComponent';
-
-import './WeatherComponent.scss';
+import Giphy from './Giphy';
+import '../styles/WeatherComponent.scss';
 import SevenDayListComponent from './SevenDayListComponent';
 
 const WeatherComponent = (props) => {
@@ -86,39 +86,49 @@ const WeatherComponent = (props) => {
 
   return (
     <div className='weather'>
-      {
-        today ?
-        <div className='today'>
-          <h1 className='today__title'>Toronto Weather</h1>
-          <p className='today__temp'>{`${Math.round(today[0].temp.value)}°C`}</p>
-          <p className='today__precip'>{`Precipitation: ${precipitation}mm`}</p>
-          <p className='today__current'>{`${currentConditions || ''}`}</p>
-          <p className='today__visibility'>{`Visibility: ${visibility || ''} km`}</p>
-          <p className='today__humidity'>{`Humidity: ${humidity || ''} km`}</p>
-          <p className='today__wind'>{`Wind: ${wind || ''} km/h ${windDirection}`}</p>
-          <img
-            className='today__icon'
-            src={require(`../assets/${
-              today[0].weather_code.value
-            }.svg`)} 
-            alt='An icon depicting the current conditions'
-          />
-        </div> : null
-      }
-      <h3>15 hour forecast</h3>
-      <ChartComponent data={
-        today ? today.reduce((accumulator, current) => {
-          const time = new Date(current.observation_time.value);
-          const hours = time.getHours();
+      <div className="weather-top">
+        <div className="weather-top__left">
+          {
+            today ?
+            <div className='today'>
+                <h1 className='today__title'>Toronto Weather</h1>
+              <div className='today__text'>
+                <p className='today__temp'>{`${Math.round(today[0].temp.value)}°C`}</p>
+                <p className='today__current'>{`${currentConditions || ''}`}</p>
+                <p className='today__precip'>{`Precipitation: ${precipitation}mm`}</p>
+                <p className='today__visibility'>{`Visibility: ${visibility || ''} km`}</p>
+                <p className='today__humidity'>{`Humidity: ${humidity || ''} km`}</p>
+                <p className='today__wind'>{`Wind: ${wind || ''} km/h ${windDirection}`}</p>
+              </div>
+              <img
+                className='today__icon'
+                src={require(`../assets/${
+                  today[0].weather_code.value
+                }.svg`)} 
+                alt='An icon depicting the current conditions'
+              />
+            </div> : null
+          }
 
-          accumulator.push({
-            time: `${hours % 12 || 12}${(hours < 12 || hours === 24) ? 'AM' : 'PM'}`,
-            temp: Math.round(current.temp.value)
-          });
+          <div className="chart">
+            <h3 className="chart__title">15 hour forecast</h3>
+            <ChartComponent className='chart__chart' data={
+              today ? today.reduce((accumulator, current) => {
+                const time = new Date(current.observation_time.value);
+                const hours = time.getHours();
 
-          return accumulator;
-        }, []) : null
-      }/>
+                accumulator.push({
+                  time: `${hours % 12 || 12}${(hours < 12 || hours === 24) ? 'AM' : 'PM'}`,
+                  temp: Math.round(current.temp.value)
+                });
+
+                return accumulator;
+              }, []) : null
+            }/>
+          </div>
+        </div>
+        <Giphy keyword={today ? today[0].weather_code.value : null} />
+      </div>
       <SevenDayListComponent days={seven ? seven.slice(0, 7) : []}/>
     </div>
   )

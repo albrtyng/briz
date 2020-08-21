@@ -1,0 +1,16 @@
+@import './fonts';
+@import './partials.scss';
+
+.gif-container{
+    width:400px;
+    display:flex;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.gif{
+    border:none;
+    width: calc(300px*16/9);
+    height:600px;
+    border-radius: 2rem;
+}
