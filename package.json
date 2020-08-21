@@ -32,18 +32,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "A weather app offering forecasts and corresponding gifs",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/albrtyng/briz.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/albrtyng/briz/issues"
-  },
-  "homepage": "https://github.com/albrtyng/briz#readme"
+  }
 }
