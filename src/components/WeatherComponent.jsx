@@ -43,7 +43,7 @@ const WeatherComponent = (props) => {
       start_time: 'now',
       end_time: date.toISOString(),
       fields: todayFields,
-      apikey: '41TLa8tmFLxgs1eTv8n9pN9f6rqABJ7i'
+      apikey: process.env.REACT_APP_CLIMACELL_API_KEY
     }
     const todaySearchParams = new URLSearchParams(data);
 

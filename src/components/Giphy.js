@@ -8,7 +8,7 @@ const Giphy = (props) => {
     useEffect(() => {
       const { keyword }= props;
       if (keyword){
-        axios.get(`http://api.giphy.com/v1/gifs/translate?s=${keyword.split('_').join(' ')}&api_key=xgQ2r5ca2ohkkDNIzYD1nOgji38B7g4b`)
+        axios.get(`http://api.giphy.com/v1/gifs/translate?s=${keyword.split('_').join(' ')}&api_key=${process.env.REACT_APP_GIPHY_API_KEY}`)
           .then(res=> {
             console.log(res);
               setWeatherGif(`https://media.giphy.com/media/${res.data.data.id}/giphy.gif`)
