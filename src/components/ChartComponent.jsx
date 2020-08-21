@@ -2,7 +2,6 @@ import React from 'react';
 import {
   AreaChart, Area, XAxis
 } from 'recharts';
-
 import TemperatureLabelComponent from './TemperatureLabelComponent';
 
 const ChartComponent = (props) => {

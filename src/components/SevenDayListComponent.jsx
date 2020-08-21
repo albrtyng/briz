@@ -1,7 +1,6 @@
 import React from 'react';
 import SevenDayListItemComponent from './SevenDayListItemComponent';
-
-import './SevenDay.scss';
+import '../styles/SevenDay.scss';
 
 const SevenDayListComponent = (props) => {
   return (

@@ -1,5 +1,19 @@
+@import './fonts';
+@import './partials.scss';
+
+body{
+  height:100%;
+  margin:0;
+}
+
 .App {
+  height:1020px;
   text-align: center;
+  background:
+    linear-gradient(127deg, #8fc3f5c7, rgba(255,0,0,0) 70.71%),
+    linear-gradient(336deg, rgba(164, 238, 195, 0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(217deg, rgb(235, 235, 34), rgba(0,0,255,0) 70.71%);
+    padding:1.5rem;
 }
 
 .App-logo {
