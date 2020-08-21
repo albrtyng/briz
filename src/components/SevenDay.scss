@@ -1,0 +1,11 @@
+.seven {
+  display: flex;
+
+  &__item {
+    width: calc(100% / 7);
+  }
+
+  &__img {
+    width: 50%;
+  }
+}
